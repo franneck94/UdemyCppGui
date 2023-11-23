@@ -102,7 +102,7 @@ int main(int, char **)
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    Desktop desktop_obj;
+    Desktop window_obj;
 
     while (!glfwWindowShouldClose(window))
     {
@@ -110,12 +110,13 @@ int main(int, char **)
 
         ImGui::NewFrame();
         ImPlot::CreateContext();
-        render(desktop_obj);
+        render(window_obj);
         ImGui::Render();
 
         end_cycle(window);
     }
-    desktop_obj.SaveTheme();
+    ImPlot::DestroyContext();
+    window_obj.SaveTheme();
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();

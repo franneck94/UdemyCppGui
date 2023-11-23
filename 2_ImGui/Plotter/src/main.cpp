@@ -119,6 +119,7 @@ int main(int, char **)
 
         end_cycle(window);
     }
+    ImPlot::DestroyContext();
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();

@@ -116,11 +116,11 @@ int main(int, char **)
         ImGui::NewFrame();
         ImPlot::CreateContext();
         render(window_obj);
-        ImPlot::DestroyContext();
         ImGui::Render();
 
         end_cycle(window);
     }
+    ImPlot::DestroyContext();
 
     window_obj.SaveMeetingsToFile("meetings.bin");
 

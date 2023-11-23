@@ -116,11 +116,11 @@ int main(int, char **)
         ImGui::NewFrame();
         ImPlot::CreateContext();
         render(window_obj);
-        ImPlot::DestroyContext();
         ImGui::Render();
 
         end_cycle(window);
     }
+    ImPlot::DestroyContext();
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();
