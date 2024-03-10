@@ -15,6 +15,8 @@
 
 namespace fs = std::filesystem;
 
+namespace
+{
 void WindowClass::Draw(std::string_view label)
 {
     constexpr static auto window_flags =
@@ -206,3 +208,4 @@ void render(WindowClass &window_obj)
 {
     window_obj.Draw("Text Editor");
 }
+} // namespace

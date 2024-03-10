@@ -23,9 +23,9 @@ include(ConfigSafeGuards)
 
 # add_clang_format_target() # needs python
 
-set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/external/vcpkg)
+# set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/external/vcpkg)
 # you can set any other vcpkg installation on your system
-# set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/../../../../../vcpkg)
+set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/../../../../../vcpkg)
 include(${VCPKG_DIR}/scripts/buildsystems/vcpkg.cmake)
 
 find_package(fmt CONFIG REQUIRED)
