@@ -73,7 +73,7 @@ int main(int, char **)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // 3.2+ only
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);           // Required on Mac
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required on Mac
 #else
     // GL 3.0 + GLSL 130
     const char *glsl_version = "#version 130";
@@ -98,6 +98,7 @@ int main(int, char **)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGui::StyleColorsDark();
+    ImPlot::CreateContext();
 
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -114,17 +115,16 @@ int main(int, char **)
         start_cycle();
 
         ImGui::NewFrame();
-        ImPlot::CreateContext();
         render(window_obj);
         ImGui::Render();
 
         end_cycle(window);
     }
-    ImPlot::DestroyContext();
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
+    ImPlot::DestroyContext();
     ImGui::DestroyContext();
 
     glfwDestroyWindow(window);
