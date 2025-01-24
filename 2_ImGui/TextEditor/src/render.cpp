@@ -40,10 +40,8 @@ void WindowClass::Draw(std::string_view label)
 void WindowClass::DrawMenu()
 {
     const auto ctrl_pressed = ImGui::GetIO().KeyCtrl;
-    const auto s_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
-    const auto l_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto s_pressed = ImGui::IsKeyPressed(ImGuiKey_S);
+    const auto l_pressed = ImGui::IsKeyPressed(ImGuiKey_L);
 
     if (ImGui::Button("Save") || (ctrl_pressed && s_pressed))
     {
@@ -71,8 +69,7 @@ void WindowClass::DrawMenu()
 void WindowClass::DrawSavePopup()
 {
     static char saveFilenameBuffer[256] = "text.txt";
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     ImGui::SetNextWindowSize(popUpSize);
     ImGui::SetNextWindowPos(popUpPos);
@@ -103,8 +100,7 @@ void WindowClass::DrawSavePopup()
 void WindowClass::DrawLoadPopup()
 {
     static char loadFilenameBuffer[256] = "text.txt";
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     ImGui::SetNextWindowSize(popUpSize);
     ImGui::SetNextWindowPos(popUpPos);

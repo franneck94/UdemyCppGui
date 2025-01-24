@@ -196,8 +196,7 @@ void CsvEditor::DrawTable()
 
 void CsvEditor::DrawSavePopup()
 {
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     SetPopupLayout();
     if (ImGui::BeginPopupModal("Save File", nullptr, popUpFlags))
@@ -223,8 +222,7 @@ void CsvEditor::DrawSavePopup()
 
 void CsvEditor::DrawLoadPopup()
 {
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     SetPopupLayout();
     if (ImGui::BeginPopupModal("Load File", nullptr, popUpFlags))
@@ -252,8 +250,7 @@ void CsvEditor::DrawValuePopup(const int row, const int col)
 {
     static char buffer[64] = {'\0'};
 
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     SetPopupLayout();
     if (ImGui::BeginPopupModal("Change Value", nullptr, popUpFlags))

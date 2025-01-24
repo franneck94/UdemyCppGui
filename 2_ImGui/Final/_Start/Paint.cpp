@@ -28,10 +28,8 @@ void Paint::Draw(std::string_view label, bool *open)
 void Paint::DrawMenu()
 {
     const auto ctrl_pressed = ImGui::GetIO().KeyCtrl;
-    const auto s_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
-    const auto l_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto s_pressed = ImGui::IsKeyPressed(ImGuiKey_S);
+    const auto l_pressed = ImGui::IsKeyPressed(ImGuiKey_L);
 
     if (ImGui::Button("Save") || (ctrl_pressed && s_pressed))
     {
@@ -61,8 +59,7 @@ void Paint::DrawMenu()
 
 void Paint::DrawSavePopup()
 {
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     ImGui::SetNextWindowSize(popUpSize);
     ImGui::SetNextWindowPos(popUpPos);
@@ -89,8 +86,7 @@ void Paint::DrawSavePopup()
 
 void Paint::DrawLoadPopup()
 {
-    const auto esc_pressed =
-        ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Escape));
+    const auto esc_pressed = ImGui::IsKeyPressed(ImGuiKey_Escape);
 
     ImGui::SetNextWindowSize(popUpSize);
     ImGui::SetNextWindowPos(popUpPos);
